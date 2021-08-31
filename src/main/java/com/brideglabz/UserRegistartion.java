@@ -30,6 +30,7 @@ class UserRegistartion {
 
         String str3="Cap2314";
         System.out.println(isValidFirstUsername(str3));
+        
     }
 }
 
