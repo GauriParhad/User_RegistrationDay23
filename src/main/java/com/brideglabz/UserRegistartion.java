@@ -1,5 +1,5 @@
-package com.brideglabz;
-publimport java.util.regex.*;
+package com.bridelabz;
+import java.util.regex.*;
 
 class UserRegistration {
     public static boolean isValidFirstUsername(String name)
