@@ -84,40 +84,40 @@ class UserRegistartion {
 
 
 
-    public static void main(String[] args) {
-        String str1 = "INDIA";
-        System.out.println(isValidFirstUsername(str1));
+    public static void main(String[] args){
+            String str1 = "INDIA";
+            System.out.println(isValidFirstUsername(str1));
 
-        String str2 = "Cap4344";
-        System.out.println(isValidFirstUsername(str2));
+            String str2 = "Cap4344";
+            System.out.println(isValidFirstUsername(str2));
 
-        String str3 = "Cap2314";
-        System.out.println(isValidFirstUsername(str3));
+            String str3 = "Cap2314";
+            System.out.println(isValidFirstUsername(str3));
 
 
-        //Checking for lastusername
-        //Test Case:1
-        String str1 = "Maharashtra";
-        System.out.println(isValidlastUsername(str1));
+            //Checking for lastusername
+            //Test Case:1
+            String str1 = "Maharashtra";
+            System.out.println(isValidlastUsername(str1));
 
-        //Test case 2
-        String str2 = "Cap434abc";
-        System.out.println(isValidlastUsername(str2));
+            //Test case 2
+            String str2 = "Cap434abc";
+            System.out.println(isValidlastUsername(str2));
 
-        //Test Case:3
-        String str3 = "Cap231xyz";
-        System.out.println(isValidlastUsername(str3));
+            //Test Case:3
+            String str3 = "Cap231xyz";
+            System.out.println(isValidlastUsername(str3));
 
-        //checking mail-id:
-        String email = "thegauriparhad@gmail.com";
-        System.out.println(isValidEmail(email));
+            //checking mail-id:
+            String email = "thegauriparhad@gmail.com";
+            System.out.println(isValidEmail(email));
 
-        // //Checking the valid 10digit mobile number//5
-        System.out.println(isValidmobilenumber());
+            // //Checking the valid 10digit mobile number//5
+            System.out.println(isValidmobilenumber());
 
-        //Checking valid password//
-        String password = "gauriparh";
-        System.out.println(isValidPassword(password));
+            //Checking valid password//
+            String password = "gauriparh";
+            System.out.println(isValidPassword(password));
 
             //Checking At least one uppercase//
             String password_uppercase = "Gaurya10@";
@@ -126,19 +126,41 @@ class UserRegistartion {
             //at least 1 numeric digit
             String password_numericdigit = "Gaurya10";
             System.out.println(isValidPassword(password_numericdigit));
-            
+
             //special characters
             String password_specialcharacter = "Gaurya10@";
             System.out.println(isValidPassword(password_specialcharacter));
 
             //Remove all sample email-id
-            String input="Hello World my # is 123 mail me @ test@test.com";
-            String Email_Pattern="([^.@\\s]+)(\\.[^.@\\s]+)*@(^.@\\s]+\\.)+([^.@\\s]+)";
-            String output =input.replaceAll(Email_Pattern,"")//replace emails
-                    .replaceAll("\\p{Punct}","")
-                    .replaceAll("\\d","")
-                    .replaceAll("\\p{Blank}{2,}+","");
+            String input = "Hello World my # is 123 mail me @ test@test.com";
+            String Email_Pattern = "([^.@\\s]+)(\\.[^.@\\s]+)*@(^.@\\s]+\\.)+([^.@\\s]+)";
+            String output = input.replaceAll(Email_Pattern, "")//replace emails
+                    .replaceAll("\\p{Punct}", "")
+                    .replaceAll("\\d", "")
+                    .replaceAll("\\p{Blank}{2,}+", "");
             System.out.println(output);
-    }
+        }
+
+            //junit happyand sad test cases:
+            @Test
+            public void happy_sad_test() {
+                String fname = "INDIA";
+                boolean fn = isValidFirstUsername(fname);
+                String lname = "Maharashtra";
+                boolean ln = isValidlastUsername(lname);
+                String email = "thegauriparhad@gmail.com";
+                boolean mid = isValidEmail(email);
+                String ph_no = "91 9648874225";
+                boolean ph = whenMatchesTenDigitNumber_thenCorrect(ph_no);
+                String password = "gauriparh";
+                boolean p = isValidPassword(password);
+                if (fn && ln && mid && ph && p) {
+                    System.out.println("Happy Test Cases");
+                }
+                if (fn || ln || mid || ph || p) {
+                    System.out.println("Sad Test Cases");
+                    UserRegistration obj = new UserRegistration();
+                    obj.happy_sad_Test();
+                }
 
 }
