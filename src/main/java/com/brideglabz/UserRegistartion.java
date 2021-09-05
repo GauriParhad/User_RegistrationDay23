@@ -69,6 +69,12 @@ class UserRegistartion {
             Pattern pattern = Pattern.compile(".*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&+=]).*$");
             Matcher matcher = pattern.matcher("Gaurya10");
         }
+        @Test
+        //special characters
+        public void isValidPassword_specialcharacter() {
+            Pattern pattern = Pattern.compile(".*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&+=]).*$");
+            Matcher matcher = pattern.matcher("Gaurya10@");
+        }
 
 
 
@@ -112,10 +118,14 @@ class UserRegistartion {
             //Checking At least one uppercase//
             String password_uppercase = "Gaurya10@";
             System.out.println(isValidPassword(password_uppercase));
-            
+
             //at least 1 numeric digit
             String password_numericdigit = "Gaurya10";
             System.out.println(isValidPassword(password_numericdigit));
+            
+            //special characters
+            String password_specialcharacter = "Gaurya10@";
+            System.out.println(isValidPassword(password_specialcharacter));
     }
 
 }
