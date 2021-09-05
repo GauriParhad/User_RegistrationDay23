@@ -1,7 +1,7 @@
 package com.brideglabz;
 publimport java.util.regex.*;
 
-class UserRegistartion {
+class UserRegistration {
     public static boolean isValidFirstUsername(String name)
     {
         String regex="^[Cap]\\w{5,29}[A-Za-z]$";
@@ -141,26 +141,41 @@ class UserRegistartion {
             System.out.println(output);
         }
 
-            //junit happyand sad test cases:
+            //junit happy and sad test cases:
             @Test
             public void happy_sad_test() {
-                String fname = "INDIA";
-                boolean fn = isValidFirstUsername(fname);
-                String lname = "Maharashtra";
-                boolean ln = isValidlastUsername(lname);
-                String email = "thegauriparhad@gmail.com";
-                boolean mid = isValidEmail(email);
-                String ph_no = "91 9648874225";
-                boolean ph = whenMatchesTenDigitNumber_thenCorrect(ph_no);
-                String password = "gauriparh";
-                boolean p = isValidPassword(password);
-                if (fn && ln && mid && ph && p) {
-                    System.out.println("Happy Test Cases");
-                }
-                if (fn || ln || mid || ph || p) {
-                    System.out.println("Sad Test Cases");
-                    UserRegistration obj = new UserRegistration();
-                    obj.happy_sad_Test();
-                }
+            String fname = "INDIA";
+            boolean fn = isValidFirstUsername(fname);
+            String lname = "Maharashtra";
+            boolean ln = isValidlastUsername(lname);
+            String email = "thegauriparhad@gmail.com";
+            boolean mid = isValidEmail(email);
+            String ph_no = "91 9648874225";
+            boolean ph = whenMatchesTenDigitNumber_thenCorrect(ph_no);
+            String password = "gauriparh";
+            boolean p = isValidPassword(password);
+            if (fn && ln && mid && ph && p) {
+                System.out.println("Happy Test Cases");
+            }
+            if (fn || ln || mid || ph || p) {
+                System.out.println("Sad Test Cases");
+                UserRegistration obj = new UserRegistration();
+                obj.happy_sad_Test();
+            }
 
+            //Junit parameterised test cases.
+            @Test
+            public void parameterised_email_entry_test (String name){
+                Pattern p = Pattern.compile("\\b[A-Z0-9._%-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b");
+                Matcher m = p.matcher("thegauriparhad@gmail.com");
+            }
+            public static void main (String[] args){
+                String email = "thegauriparhad@gmail.com";
+                System.out.println(isValidEmail(email));
+            }
+        }
+    }
 }
+
+
+
