@@ -75,6 +75,10 @@ class UserRegistartion {
             Pattern pattern = Pattern.compile(".*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&+=]).*$");
             Matcher matcher = pattern.matcher("Gaurya10@");
         }
+        //Ability to clear all mail
+        public void Email_Pattern() {
+            Pattern pattern = Pattern.compile(([^.@\\s]+)(\\.[^.@\\s]+)*@(^.@\\s]+\\.)+([^.@\\s]+)";
+        }
 
 
 
@@ -126,6 +130,15 @@ class UserRegistartion {
             //special characters
             String password_specialcharacter = "Gaurya10@";
             System.out.println(isValidPassword(password_specialcharacter));
+
+            //Remove all sample email-id
+            String input="Hello World my # is 123 mail me @ test@test.com";
+            String Email_Pattern="([^.@\\s]+)(\\.[^.@\\s]+)*@(^.@\\s]+\\.)+([^.@\\s]+)";
+            String output =input.replaceAll(Email_Pattern,"")//replace emails
+                    .replaceAll("\\p{Punct}","")
+                    .replaceAll("\\d","")
+                    .replaceAll("\\p{Blank}{2,}+","");
+            System.out.println(output);
     }
 
 }
