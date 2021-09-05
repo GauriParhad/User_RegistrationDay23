@@ -59,6 +59,10 @@ class UserRegistartion {
         Pattern pattern = Pattern.compile(".*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&+=]).*$");
         Matcher matcher = pattern.matcher("gauriparh");
     }
+    //at least 1 uppercase:
+    public void isValidPassword_uppercase() {
+        Pattern pattern = Pattern.compile(".*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&+=]).*$");
+        Matcher matcher = pattern.matcher("GauryiParh");
 
 
 
@@ -92,13 +96,16 @@ class UserRegistartion {
         String email = "thegauriparhad@gmail.com";
         System.out.println(isValidEmail(email));
 
-        // //Checking the valid 10digit mobile number//
+        // //Checking the valid 10digit mobile number//5
         System.out.println(isValidmobilenumber());
-
 
         //Checking valid password//
         String password = "gauriparh";
         System.out.println(isValidPassword(password));
+
+            //Checking At least one uppercase//
+            String password_uppercase = "Gaurya10@";
+            System.out.println(isValidPassword(password_uppercase));
     }
 
 }
