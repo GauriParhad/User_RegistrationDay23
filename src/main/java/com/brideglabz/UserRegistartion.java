@@ -48,6 +48,14 @@ class UserRegistartion {
 
     }
 
+    @Test
+    public static boolean isValidmobilenumber() {
+        Pattern pattern = Pattern.compile("^\\d{10}$");
+        Matcher matcher = pattern.matcher("91 9985467725");
+        assertTrue(matcher.matches());
+    }
+
+
 
 
     public static void main(String[] args) {
@@ -77,6 +85,10 @@ class UserRegistartion {
         //checking mail-id:
         String email = "thegauriparhad@gmail.com";
         System.out.println(isValidEmail(email));
+
+        // //Checking the valid 10digit mobile number//
+        System.out.println(isValidmobilenumber());
+
     }
-    
+
 }
